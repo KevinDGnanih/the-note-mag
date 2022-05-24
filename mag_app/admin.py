@@ -1,6 +1,7 @@
+""" Admin file """
 from django.contrib import admin
-from .models import Post, Comment, Category
 from django_summernote.admin import SummernoteModelAdmin
+from .models import Post, Comment, Category
 
 
 @admin.register(Post)

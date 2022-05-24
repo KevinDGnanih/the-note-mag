@@ -1,5 +1,12 @@
+""" View Django File """
 from django.shortcuts import render
+from django.views import generic
+from .models import Post
 
 
-def mag_page(request):
-    return render(request, 'mag_app/index.html')
+class PostList(generic.ListView):
+    """ Structure the rendering of the post list """
+    model = Post
+    Post.queryset = Post.objects.filter(status=1).order_by('-created_on')
+    template_name = 'index.html'
+    paginate_by = 6

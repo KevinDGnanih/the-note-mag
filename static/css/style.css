@@ -1,0 +1,436 @@
+li {
+    list-style: none;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    /*padding: 10px 19px;*/
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+/* Icons */
+.fa-heart {
+    color: pink;
+}
+
+/* Navigation bar */
+
+.f-left {
+    float: left;
+}
+
+.f-right {
+    float: right;
+}
+
+/* Header Top */
+
+
+
+.header-area .header-top {
+    padding: 29px 80px;
+}
+
+.header-area .header-top .header-info-left .form-box .search-icon {
+    position: absolute;
+    display: inline-block;
+    top: 6px;
+    right: 1px;
+    padding: 7px 23px;
+    cursor: pointer;
+    background: white;
+}
+
+.header-area .header-top .header-info-left .form-box .search-icon i {
+    color: #140C40;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Header Bottom */
+
+.header-bottom {
+    border-top: 1px solid #E6E5EA;
+}
+
+.header-bottom .main-menu ul li {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Latest Posts area */
+
+.section-tittle {
+    position: relative;
+}
+
+.hover-card-img {
+    transition: all 0.3s ease-out 0s;
+}
+
+.hover-card-img:hover {
+    transform: scale(1.01);
+}
+
+.shad {
+    transition: all 0.3s ease-out 0s;
+}
+
+.shad:hover {
+    box-shadow: 5px 5px 15px rgb(235, 235, 235);
+}
+.section-tittle::before {
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 77%;
+    background: #2D2362;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Post Detail */
+
+.page-notification {
+    background: #f9f5f5;
+    padding: 13px 0;
+    margin-bottom: 45px;
+}
+
+.breadcrumb {
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Post */
+
+.card {
+    border: none;
+    background-color: transparent;
+}
+
+.card-img-top {
+    padding: 10px;
+    align-items: center;
+}
+
+/* Color Palette */
+
+.title-color {
+    color: #5b486d;
+}
+
+/* Footer */
+
+.footer-bottom-area .footer-border {
+    border-top: 1px solid #E6E5EA;
+    padding: 18px 0px 4px;
+}
+
+/* Form */
+
+.login-form {
+    background: white;
+    padding: 33px 60px 50px 50px;
+    box-shadow: 0px 10px 30px 0px rgb(13 12 13 / 20%);
+}
+
+.input-form .login-form {
+    padding-top: 35px;
+    padding-bottom: 75px;
+}
+
+.login-check {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 8px;
+    overflow: hidden;
+}
+
+.login-form .input-box .single-input-field input {
+    border: 1px solid #C9C9C9;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    padding: 0 25px;
+    color: #000;
+}
+
+.login-form .input-box .single-input-field label {
+    display: block;
+    font-size: 17px;
+    margin-bottom: 6px;
+    color: #140C40;
+    text-transform: capitalize;
+    font-weight: 500;
+    text-align: left;
+}
+
+.login-check input[type=checkbox] {
+    display: none;
+}
+
+.login-check input[type=checkbox] + label {
+    display: inline-block;
+    margin: 0.2em;
+    cursor: pointer;
+    padding: 0;
+    margin: 0 0 13px 0;
+}
+
+input[type=checkbox],
+input[type=radio] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.login-form .input-box {
+    padding-top: 35px;
+    padding-bottom: 75px;
+}
+
+.login-check a {
+    color: #0074E8;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.login-form .login-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remember {
+    padding: 0;
+}
+
+.submit-btn {
+    background: #f9f5f5;
+    height: 50px;
+    padding: 10px 43px;
+    border: 0;
+    text-transform: capitalize;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 0px;
+}
+
+/* Register Form */
+
+.register-form-area .register-form {
+    background: #fff;
+    padding: 33px 60px 50px 50px;
+    box-shadow: 0px 10px 30px 0px rgb(13 12 13 / 20%);
+}
+
+.register-form-area .register-form .input-box {
+    padding-top: 35px;
+    padding-bottom: 60px;
+}
+
+
+.register-form-area .register-form .input-box .single-input-field label {
+    display: block;
+    font-size: 17px;
+    margin-bottom: 6px;
+    color: #140C40;
+    text-transform: capitalize;
+    font-weight: 500;
+    text-align: left;
+}
+
+.register-form-area .register-form .input-box .single-input-field input {
+    border: 1px solid #C9C9C9;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    padding: 0 25px;
+    color: #000;
+}
+
+.register-form-area .register-form .register-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.register-form-area .register-form .register-footer p {
+    margin: 0;
+}
+
+.submit-btn-reg {
+    background: #f9f5f5;
+    
+    padding: 10px 43px;
+    border: 0;
+    text-transform: capitalize;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 0px;
+}
+
+
+/* AllAuth forms */
+
+label {
+    margin: 0;
+    display: block;
+    font-size: 17px;
+    margin-bottom: 6px;
+    color: #140C40;
+    text-transform: capitalize;
+    font-weight: 500;
+    text-align: left;
+}
+
+input {
+    padding-top: 35px;
+    padding-bottom: 60px;
+    border: 1px solid #C9C9C9;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    padding: 0 25px;
+    color: #000;
+}
+
+#id_remember {
+    display: none;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 8px;
+    overflow: hidden;
+}
+
+#id_remember {
+    border: 0.1em solid #e4e4e4;
+    border-radius: 0.2em;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding-left: 0.2em;
+    padding-bottom: 0.3em;
+    margin-right: 10px;
+    vertical-align: bottom;
+    color: transparent;
+    transition: .2s;
+}
+
+#id_remember a {
+    color: #0074E8;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+
+.forget_pass {
+
+    justify-content: space-between;
+    padding-top: 8px;
+    overflow: hidden;
+    float: right;
+}
+
+
+
+/* Comments Section */
+
+.comments {
+    border-bottom: 1px solid #BBBBBB;
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+.capital {
+    text-transform: capitalize;
+}
+
+.time-comment {
+    font-size: 14px;
+    color: #BBBBBB;
+    text-transform: uppercase;
+    margin-bottom: 17px;
+    display: block;
+}
+
+.author {
+    display: inline-block !important;
+    padding: 0px 22px;
+    border: 1px solid #bbbb;
+    margin-left: 5px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-size: smaller;
+}
+
+.no-bold {
+    font-weight: 100;
+}
+
+.comment-box {
+    background-color: #f9f5f5;
+}
+
+#div_id_body > label {
+    display: none;
+}
+
+
+#div_id_body {
+    margin-bottom: 15px;
+}
+
+.submit-btn-comment {
+    background: #2D2362;
+    width: 100%;
+    height: 60px;
+    padding: 10px 20px;
+    border: 0;
+    color: #fff;
+    text-transform: capitalize;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 0px;
+}
+
+/* Logout Page */
+
+.submit-btn-logout {
+    background: #2D2362;
+    width: 100%;
+    height: 60px;
+    padding: 10px 20px;
+    border: 0;
+    color: #fff;
+    text-transform: capitalize;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 0px;
+}

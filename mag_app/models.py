@@ -6,7 +6,9 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, 'Draft'), (1, 'Published'))
 
+
 class Category(models.Model):
+    """ Class model for Category  """
     name = models.CharField(max_length=50)
     description = models.TextField()
 
@@ -18,14 +20,17 @@ class Category(models.Model):
         return self.name
 
 
+# Gets the categories
 CATEGORIES = Category.objects.all().values_list('name', 'name')
+
 
 class Post(models.Model):
     """ Class for the post """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     category = models.CharField(max_length=50, choices=CATEGORIES)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='mag_posts')
+    author = models.ForeignKey(User, on_delete=models.CASCADE,
+                               related_name='mag_posts')
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     featured_image = CloudinaryField('image', default='placeholder')
@@ -38,7 +43,6 @@ class Post(models.Model):
         """ Adding methods for a better readanility and user experience """
         ordering = ['created_on']
 
-    
     def __str__(self):
         """ The string method to make it easier to read """
         return self.title
@@ -50,7 +54,8 @@ class Post(models.Model):
 
 class Comment(models.Model):
     """ Class for the comment """
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    post = models.ForeignKey(Post, on_delete=models.CASCADE,
+                             related_name='comments')
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()
