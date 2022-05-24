@@ -43,10 +43,6 @@ class Post(models.Model):
         """ The string method to make it easier to read """
         return self.title
 
-    def __str__(self):
-        """ The string method to make it easier to read """
-        return self.category
-
     def number_of_likes(self):
         """ Returns the total number of likes on a post """
         return self.likes.count()
