@@ -6,12 +6,25 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, 'Draft'), (1, 'Published'))
 
+class Category(models.Model):
+    name = models.CharField(max_length=50)
+    description = models.TextField()
+
+    class Meta:
+        """ Set up the plural of the Category class name """
+        verbose_name_plural = 'Categories'
+
+    def __str__(self):
+        return self.name
+
+
+CATEGORIES = Category.objects.all().values_list('name', 'name')
 
 class Post(models.Model):
     """ Class for the post """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    # category = models.CharField(max_length=50, choices=CATEGORY, default='Music')
+    category = models.CharField(max_length=50, choices=CATEGORIES)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='mag_posts')
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
@@ -29,6 +42,10 @@ class Post(models.Model):
     def __str__(self):
         """ The string method to make it easier to read """
         return self.title
+
+    def __str__(self):
+        """ The string method to make it easier to read """
+        return self.category
 
     def number_of_likes(self):
         """ Returns the total number of likes on a post """
@@ -51,15 +68,3 @@ class Comment(models.Model):
     def __str__(self):
         """ Display the comment and the author """
         return f"Comment {self.body} by {self.name}"
-
-
-class Category(models.Model):
-    name = models.CharField(max_length=50)
-    description = models.TextField()
-
-    class Meta:
-        """ Set up the plural of the Category class name """
-        verbose_name_plural = 'Categories'
-
-    def __str__(self):
-        return self.name
