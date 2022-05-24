@@ -1,0 +1,1 @@
+web: gunicorn THE_NOTE_MAG.wsgi
