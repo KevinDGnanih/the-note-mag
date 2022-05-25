@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+<!-- Login Area Start -->
+<div class="container login-form col-xl-7 col-lg-8">
+  <!-- Login Heading Start -->
+  <div class="row justify-content-center">
+    <div class="">
+      <h3 class="text-center">{% trans "Login" %}</h3>
+      <p class="text-center">{% blocktrans %}Enter Login details to get access{% endblocktrans %}</p>
+    </div>
+  </div>
+  <!-- Login Heading End -->
+  <!-- Login Input Fields Start -->
+  <div class="row justify-content-center">
+    <div class="col-xl-7 col-lg-8">
+      <form class="login" method="POST" action="{% url 'account_login' %}">
+        {% csrf_token %}
+        {{form.as_p}}
+        <a class="button secondaryAction forget_pass " href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+    </div>
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+    <!-- Form Footer -->
+    <div class="login-footer col-lg-8">
+      <p>Don't have an account? <a class="remember" href="{{ signup_url }}">Sign Up</a> here</p>
+      <button class="submit-btn" type="submit">{% trans "Login" %}</button>
+    </div>
+    </form>
+  </div>
+</div>
+</div>
+
+{% endblock %}
