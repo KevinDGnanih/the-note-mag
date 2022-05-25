@@ -54,19 +54,19 @@
                                         </li>
                                         {% if user.is_authenticated %}
                                         <li class="d-inline-block">
-                                            <a href="{% url 'account_logout' %}">Logout</a>
+                                            <a href="">Logout</a>
                                         </li>
                                         {% if user.is_superuser %}
                                         <li class="d-inline-block">
-                                            <a href="{% url 'add_post' %}">Add Post</a>
+                                            <a href="">Add Post</a>
                                         </li>
                                         {% endif %}
                                         {% else %}
                                         <li class="d-inline-block">
-                                            <a href="{% url 'account_signup' %}">Sign Up</a>
+                                            <a href="">Sign Up</a>
                                         </li>
                                         <li class="d-inline-block">
-                                            <a href="{% url 'account_login' %}">Login</a>
+                                            <a href="">Login</a>
                                         </li>
                                         {% endif %}
                                     </ul>
@@ -157,7 +157,7 @@
             alert.close();
         }, 3000);
     </script>
-    <script src="{% static 'js/script.js' %}"></script>
+    <!--<script src="{% static 'js/script.js' %}"></script>-->
 </body>
 
 </html>
