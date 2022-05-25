@@ -17,17 +17,11 @@ class PostList(generic.ListView):
 
 
 class CategoryPosts(generic.ListView):
+    model = Post.category
+    template_name = 'category_posts.html'
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
     paginate_by = 6
-    def get(self, request, cats):
-        category_posts = Post.objects.filter(category=cats)
-        return render(
-            request,
-            'category_posts.html',
-            {
-                'cats': cats,
-                'category_posts': category_posts,   
-            }
-        )
+
 
 
 #def CategoryPosts(request, cats):
