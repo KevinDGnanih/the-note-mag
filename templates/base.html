@@ -58,7 +58,7 @@
                                         </li>
                                         {% if user.is_superuser %}
                                         <li class="d-inline-block">
-                                            <a href='#'>Add Post</a>
+                                            <a href="{% url 'add_post' %}">Add Post</a>
                                         </li>
                                         {% endif %}
                                         {% else %}
