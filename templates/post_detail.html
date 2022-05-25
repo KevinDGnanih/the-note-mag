@@ -1,5 +1,4 @@
-{% extends 'base.html' %} 
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 {% load crispy_forms_tags %}
 
@@ -29,8 +28,8 @@
                         <h2 class="post-title title-color">{{ post.title }}</h2>
                         <p class="post-subtitle">{{ post.author }} | {{ post.created_on }} </p>
                         {% if user.is_superuser %}
-                        <a href="{% url 'edit_post' post.slug %}">Edit</a>
-                        <a href="{% url 'delete_post' post.slug %}">Delete</a>
+                        <a href="#">Edit</a>
+                        <a href="#">Delete</a>
                         {% endif %}
                     </div>
                 </div>
@@ -137,34 +136,6 @@
             <!-- Comments Section End -->
         </div>
     </div>
-
-    <!--<script>
-        document.getElementById("likedata").addEventListener("submit",
-            function (e) {
-                e.preventDefault();
-
-                liked = document.getElementsByClassName('fas');
-                notLiked = document.getElementsByClassName('far');
-
-                const formData = new FormData;
-                console.log(liked);
-
-                formData.append('liked', liked);
-                formData.append('notLiked', notLiked);
-                console.log(formData);
-                fetch('{% url "post_like" post.slug %}', {
-                        method: 'POST',
-                        body: formData
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log('Success:', data);
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                    });
-            });
-    </script>-->
 
 </main>
 
