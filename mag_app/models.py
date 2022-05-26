@@ -2,6 +2,7 @@
 
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse, reverse_lazy
 from cloudinary.models import CloudinaryField
 
 STATUS = ((0, 'Draft'), (1, 'Published'))
@@ -28,7 +29,7 @@ class Post(models.Model):
     """ Class for the post """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    category = models.CharField(max_length=50, choices=CATEGORIES)
+    category = models.CharField(max_length=50, choices=CATEGORIES, default='Music')
     author = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name='mag_posts')
     updated_on = models.DateTimeField(auto_now=True)
@@ -50,6 +51,12 @@ class Post(models.Model):
     def number_of_likes(self):
         """ Returns the total number of likes on a post """
         return self.likes.count()
+
+    def get_absolute_url(self):
+        return reverse('home')
+
+    def get_success_url(self):
+        return reverse_lazy('home')
 
 
 class Comment(models.Model):

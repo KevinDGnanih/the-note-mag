@@ -16,13 +16,30 @@ class PostList(generic.ListView):
     paginate_by = 6
 
 
-class CategoryPosts(generic.ListView):
-    model = Post.category
-    template_name = 'category_posts.html'
-    queryset = Post.objects.filter(status=1).order_by('-created_on')
-    paginate_by = 6
+# class CategoryLists(generic.ListView):
+#     template_name = 'category_posts.html'
+#     context_object_name = 'cats'
+#     paginate_by = 6
+#     def get_queryset(self):
+#         content = {
+#             'cats': self.kwargs['category'],
+#             'post': Post.objects.filter(category__name=self.kwargs)
+#             ['category'].filter(status='published')
+#         }
+#         return content
 
+     
 
+def CategoryPosts(request, cats):
+    category_posts = PostList.queryset.filter(category=cats)
+    return render(
+        request,
+        'category_posts.html',
+        {
+            'cats': cats,
+            'category_posts': category_posts,
+        }
+    )
 
 #def CategoryPosts(request, cats):
 #    category_posts = Post.objects.filter(category=cats)
@@ -101,14 +118,14 @@ class PostLike(View):
 class AddPost(CreateView):
     model = Post
     template_name = 'add_post.html'
-    fields = ('title', 'slug', 'category', 'content', 'featured_image',
+    fields = ('title', 'slug', 'author',  'category', 'content', 'featured_image',
               'status')
 
 
 class EditPost(UpdateView):
     model = Post
     template_name = 'edit_post.html'
-    fields = ('title', 'slug', 'category', 'content', 'featured_image',
+    fields = ('title', 'slug', 'author', 'category', 'content', 'featured_image',
               'status')
 
 
