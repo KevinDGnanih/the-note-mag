@@ -20,6 +20,9 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('home')
+
 
 # Gets the categories
 CATEGORIES = Category.objects.all().values_list('name', 'name')
