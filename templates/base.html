@@ -47,26 +47,26 @@
                                         <p>The Note</p>
                                     </div>
                                 </div>
-                                <div class="col header-info-right d-flex align-items-center">
+                                <div id="up-nav-link" class="col header-info-right d-flex align-items-center">
                                     <ul>
-                                        <li class="d-inline-block">
-                                            <a href="{% url 'home' %}">Home</a>
+                                        <li class="d-inline-block bold">
+                                            <a href="{% url 'home' %}">HOME</a>
                                         </li>
                                         {% if user.is_authenticated %}
-                                        <li class="d-inline-block">
-                                            <a href="{% url 'account_logout' %}">Logout</a>
+                                        <li class="d-inline-block bold">
+                                            <a href="{% url 'account_logout' %}">LOGOUT</a>
                                         </li>
                                         {% if user.is_superuser %}
-                                        <li class="d-inline-block">
-                                            <a href="{% url 'add_post' %}">Add Post</a>
+                                        <li class="d-inline-block bold">
+                                            <a href="{% url 'add_post' %}">ADD POST</a>
                                         </li>
                                         {% endif %}
                                         {% else %}
-                                        <li class="d-inline-block">
-                                            <a href="{% url 'account_signup' %}">Sign Up</a>
+                                        <li class="d-inline-block bold">
+                                            <a href="{% url 'account_signup' %}">SIGN UP</a>
                                         </li>
-                                        <li class="d-inline-block">
-                                            <a href="{% url 'account_login' %}">Login</a>
+                                        <li class="d-inline-block bold">
+                                            <a href="{% url 'account_login' %}">LOGIN</a>
                                         </li>
                                         {% endif %}
                                     </ul>
@@ -86,16 +86,16 @@
                                     <nav>
                                         <ul id="navigation">
                                             <li>
-                                                <a href="{% url 'category' ['category/(?P<music>']  %}">Music</a>
+                                                <a class="bold" href="#">MUSIC</a>
                                             </li>
                                             <li>
-                                                <a href="#">Live</a>
+                                                <a class="bold" href="#">LIVE</a>
                                             </li>
                                             <li>
-                                                <a href="#">Review</a>
+                                                <a class="bold" href="#">REVIEW</a>
                                             </li>
                                             <li>
-                                                <a href="#">Playlist</a>
+                                                <a class="bold" href="#">PLAYLIST</a>
                                             </li>
                                         </ul>
                                     </nav>
