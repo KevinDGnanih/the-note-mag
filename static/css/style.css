@@ -80,6 +80,24 @@ img {
 
 .header-bottom {
     border-top: 1px solid #E6E5EA;
+    border-bottom: 1px solid #E6E5EA;
+    margin-bottom: 18px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+}
+
+.sticky + .latest-posts {
+    padding-top: 60px;
+}
+
+.bottom-bar {
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
 
 .header-bottom .main-menu ul li {
