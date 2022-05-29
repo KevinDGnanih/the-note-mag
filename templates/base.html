@@ -87,7 +87,7 @@
                                         <ul id="navigation">
                                             {% for category in category_list %}
                                             <li>
-                                                <a class="bold capital" href="category/{{ category.name }}">{{ category.name | title }}</a>
+                                                <a class="bold capital" href="category/{{ category.name }}">{{ category.name | upper }}</a>
                                             </li>
                                             {% endfor %}
                                         </ul>
