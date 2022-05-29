@@ -85,18 +85,11 @@
                                 <div class="main-menu text-center d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
+                                            {% for category in category_list %}
                                             <li>
-                                                <a class="bold" href="#">MUSIC</a>
+                                                <a class="bold capital" href="category/{{ category.name }}">{{ category.name | title }}</a>
                                             </li>
-                                            <li>
-                                                <a class="bold" href="#">LIVE</a>
-                                            </li>
-                                            <li>
-                                                <a class="bold" href="#">REVIEW</a>
-                                            </li>
-                                            <li>
-                                                <a class="bold" href="#">PLAYLIST</a>
-                                            </li>
+                                            {% endfor %}
                                         </ul>
                                     </nav>
                                 </div>

@@ -53,7 +53,8 @@ img {
 }
 
 .capital {
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
+    text-transform: capitalize;
 }
 
 /* Header Top */

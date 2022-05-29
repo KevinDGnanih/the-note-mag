@@ -28,6 +28,12 @@ def CategoryPosts(request, cats):
     )
 
 
+def category_list(request):
+    category_list = Category.objects.all()
+    context = {
+        'category_list': category_list,
+    }
+    return context
 
 
 class PostDetail(View):
