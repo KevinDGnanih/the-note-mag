@@ -119,7 +119,135 @@ __Navigation__:
 
     * This feature is presnet on all the pages/sections and is fixed to the top.
     * The hearder section has fully responsive navigation bar which consists of the logo, located on the middle.
+    * The navigation buttons for Home, Sign Up, Login (located right-hand side after the logo) and a Search bar (located on the left-hand side).
+    * The navigation buttons for categories are located underneath the logo at the bottom part of the header navigation bar.
+    * The search bar has a placeholder text to indicate to the user that they can enter text in the box provided.
 
 
+__Home__:
+
+    * This is the default page displayed when the user accesses the website.
+    * This page can also be viewed by clicking The Note magazine logo or the home button from the navigation bar.
+    * The latest posts from all categories are displayed (max of 6) per page.
+    * The is a 'Next' button that allows user to click and navigate to the next page to view more articles.
+    * Alternatively 'Prev' button can be clicked to return a page back.
+    * Acticle psots are displayed from most recent to oldest.
+    * Each post is displayed in a card style with an image, title, date, like count (And if Admin logged in, can see Edit and Delete buttons).
+    * Selecting the clickable text or image will take the user to the 'Post detail' page to display the full content of the article.
+
+__Post Detail__:
+
+    * Accessed once the user selects an article from the 'Home' or 'Search' or 'Category' page.
+    * Article image will be displayed at the top.
+    * Content is then followed by the title, author, date, (if Admin, Edit and Delete button).
+    * Like button and comment count, sharing socials icon.
+    * Further below is the comment section which users can view even if not logged in.
+    * Comemnt section is available and displayed for logged in users who can submit a comment.
+    * This is then sent for approval which is feature only the Admin can access.
+    * Alert is displayed to indicate the comment has been sent for approval.
+    * Approved comments can be viewed on the post.
+
+__Sign Up__:
+
+    * Accessed from the navigation bar by selecting the 'Sign Up' button.
+    * Once selected, the user is taken to the 'Sign Up' page.
+    * New users are prompted to enter a username, email (optional), are requiered for the user to be able to create an account, otherwise an error is displayed.
+    * All fields apart from the email (optional) are required for the user to be able to create an account, otherwise an error is displayed.
+    * Upon successful creation the user is then able to login to the account.
+    * Alert is displayed to indicate that the user has signed in.
+    * Exisiting users are provided with the sign in to take them to the 'Login' page.
+
+__Login__:
+
+    * Accessed from the navigation bar by selecting the 'Login' button.
+    * Once selected, the user is taken to the 'Login' page.
+    * Existing users can enter their username and password and click the login button.
+    * Upon successful login, user is taken to the 'Home' page.
+    * Alert is displayed to indicate that the user has signed in.
+    * Incorrect username and password will faily to log the user into their account and a message will be displayed on the 'Login' page to indicate this.
+    * New users are provided with the register link to take them to the 'Sign Up' page to create an account.
+
+__Logout__:
+
+    * Option only available to users who are currently logged in.
+    * Accessed from the navigation bar by selecting the 'Logout' button.
+    * Once selected, user will be taken to the 'Sign Out' page to confirm that they wish to sign out from their account.
+    * User can select the sign out button option which will successfully sign out the user from their account and return them to the home page.
+    * Alert added to indicate that the user has signed out.
 
 
+__Search__:
+
+* Accessed from the navigation bar in the top left-hand corner. 
+* Placeholder text added to indicate to the user that text can be entered in the input box.
+* User cannot submit an empty search and user has to enter a max of 1 character otherwise an error is displayed.
+* User is able to click the search button once the requirements are met (as stated above), this will take the user to the 'Search' page.
+* User is able to scroll down and view the displayed results of the articles which match the keywords entered.
+* Prior to the search results, the user is displayed with the keyword searched and below the results are displayed.
+* For any successful matches display the recipe card (same as the ones on the 'Home' page), the user can click this and be taken to the recipe page.
+* For any unsuccessful matches, the user is displayed with a message to state that no results have been found for this keyword.
+
+__Footer__:
+
+* This feature is present on all the pages/sections and is fixed to the top.
+
+__Features Exclusive to Admin__:
+
+    * Only the Admin can approvem and delete user comments.
+    * Only the Admin can createm update and delete posts.
+
+### Future Features
+
+Due to time constraints, I was unable to apply additional features, in the future I would like to implement the following:
+
+* Allow users to edit/delete their own posted comments.
+* Improving the User experience on the website, with the ability to like a post with a reaload of the page.
+
+
+## Technologies Used
+
+For this project the main languages used are __HTML5__, __CSS3__, __JavaScript__, __Python__, __Django__ and __Heroku Postgres__.
+
+I have also utilised the following frameworks, libraries, and tools:
+
+* [Bootstrap v5.1.3](https://getbootstrap.com/): 
+    * Bootstrap has been used for overall responsiveness of the website and for the layout with the addition of select classes.
+* [GitPod](https://www.gitpod.io/): 
+    * I used GitPod as the IDE for this project and Git has been used for Version Control.
+* [GitHub](https://www.github.com/): 
+    * GitHub has been used to create a repository to host the project and receive updated commits from GitPod.
+* [Balsamiq](https://balsamiq.com/): 
+    * I used Balsamiq to create the wireframe for the website for the basic structure and layout.
+* [dbdiagram](https://dbdiagram.io/home): 
+    * I used dbdiagram to create the database diagram model for the website.
+* [Google Fonts](https://getbootstrap.com/): 
+    * I have used Google Fonts to import fonts for styling purposes for this project.
+* [Font Awesome](https://fontawesome.com/): 
+    * Font Awesome was used to apply icons in the Home, Exercises and Footer sections.
+* [Affinity Photo](https://affinity.serif.com/en-gb/photo/): 
+    * Affinity Photo is a program used to edit the favicon and picture for this project.
+* [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools): 
+    * Chrome Dev Tools was used to test the site, assist with debugging issues and run reports from Lighthouse.
+* [W3C Markup Validation Service](https://validator.w3.org/): 
+    * The W3C Markup Validation Service was used to validate the HTML document for this project and to identify any issues with the code.
+* [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/): 
+    * The W3C CSS Validation Service was used to validate the CSS document for this project and to identify any issues with the code.
+* [JSHint Validation Service](https://jshint.com/): 
+    * The JSHint Validation Service was used to validate the JavaScript document for this project and to identify any issues with the code.
+* [PEP8 Online Validation Service](http://pep8online.com/): 
+    * The PEP8 Online Validation Service was used to validate the Python document for this project and to identify any issues with the code.
+* [Heroku](https://www.heroku.com/): 
+    * Heroku has been used to create a repository to host the project and receive updated commits from GitPod.
+* [Django](https://docs.djangoproject.com/en/3.1/): 
+    * Django was used as the main framework to build this project.
+* [Cloudinary](https://cloudinary.com/): 
+    * Cloudinary was used to store all media and static files for this project.
+* [Am I Responsive](http://ami.responsivedesign.is/):
+    * Am I Responsive was used to create the header image for the README file.
+* [Python](https://www.python.org/): 
+    * Various Python modules were used to build this project as detailed below and as seen in the requirements.txt file.
+
+
+## Testing
+
+Testing for this project was completed manually and some auto unit testing was also implemented.
