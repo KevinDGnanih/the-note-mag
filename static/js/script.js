@@ -18,31 +18,19 @@ function myFunction() {
 }
 
 
-function fetchpost() {
-  // Get Form Data
-  const myForm = document.getElementById('likedata');
+const myForm = document.getElementById('likedata');
+myForm.addEventListener('submit', function (e) {
+  e.preventDefault()
 
-  myForm.addEventListener('submit', function (e) {
-    e.preventDefault();
+  const formData = new FormData;
 
-    let liked = document.getElementsByClassName('fas');
-    let notLiked = document.getElementsByClassName('far');
+  fetch("$('#url).attr('data-url)", {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.error('Error:', error)
+  });
 
-
-
-    const formData = new FormData(this);
-    const btnLike = document.getElementsByClassName('btn-like');
-    console.log('I saw')
-
-    formData.append('liked', liked);
-    formData.append('notLiked', btnlike);
-
-    const request = new Request('{% url "post_like" post.slug %}', {
-      method: 'POST',
-      body: formData
-    });
-
-    request.formData().then(function(data) {
-      console.log('end of fetch')
-    })
-  })}
+});

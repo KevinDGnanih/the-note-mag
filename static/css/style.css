@@ -59,7 +59,9 @@ img {
 
 /* Header Top */
 
-
+.search-box {
+    width: 50%;
+}
 
 .header-area .header-top {
     padding: 29px 80px;
