@@ -10,7 +10,7 @@ STATUS = ((0, 'Draft'), (1, 'Published'))
 
 class Category(models.Model):
     """ Class model for Category  """
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=200)
     description = models.TextField()
 
     class Meta:
@@ -21,6 +21,7 @@ class Category(models.Model):
         return self.name
 
     def get_absolute_url(self):
+        """ Return to home page """
         return reverse('home')
 
 
@@ -32,7 +33,8 @@ class Post(models.Model):
     """ Class for the post """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    category = models.CharField(max_length=50, choices=CATEGORIES, default='Music')
+    category = models.CharField(max_length=200, choices=CATEGORIES,
+                                default='Music')
     author = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name='mag_posts')
     updated_on = models.DateTimeField(auto_now=True)
@@ -56,9 +58,11 @@ class Post(models.Model):
         return self.likes.count()
 
     def get_absolute_url(self):
+        """ Return to home page """
         return reverse('home')
 
     def get_success_url(self):
+        """ Return to home page """
         return reverse_lazy('home')
 
 

@@ -32,17 +32,22 @@
                             <div class="row d-flex justify-content-lg-between align-items-center">
                                 <div class="col header-info-left">
                                     <li class="d-none d-lg-block">
-                                        <div class="form-box f-left">
-                                            <input type="text" name="Search" placeholder="Search your intrest...">
-                                            <!--<i class="fa-solid fa-magnifying-glass position-relative"></i>-->
-                                        </div>
+                                        <form id="search-bar" name="search-form" class="d-flex" method="POST"
+                                            action="{% url 'search' %}">
+                                            {% csrf_token %}
+                                            <input class="form-control" type="search" placeholder="Search a post"
+                                                aria-label="Search" name="searched" 
+                                                title="Please enter minimum of 2 characters" required>
+                                            <button class="btn" type="submit"></button>
+                                        </form>
                                     </li>
                                 </div>
                                 <div class="col header-info-mid text-center">
                                     <!-- Logo -->
                                     <div class="logo">
                                         <a href="{% url 'home' %}">
-                                            <img src="https://res.cloudinary.com/kdcloud-8710/image/upload/v1653810306/The%20Note%20mag/2939.png_860_ceq9m5.png" width="100" height="100" alt="">
+                                            <img src="https://res.cloudinary.com/kdcloud-8710/image/upload/v1653810306/The%20Note%20mag/2939.png_860_ceq9m5.png"
+                                                width="100" height="100" alt="">
                                         </a>
                                         <p>The Note</p>
                                     </div>
@@ -87,7 +92,8 @@
                                         <ul id="navigation">
                                             {% for category in category_list %}
                                             <li>
-                                                <a class="bold capital" href="/category/{{ category.name }}">{{ category.name | upper }}</a>
+                                                <a class="bold capital"
+                                                    href="/category/{{ category.name }}">{{ category.name | upper }}</a>
                                             </li>
                                             {% endfor %}
                                         </ul>

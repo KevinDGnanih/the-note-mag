@@ -43,7 +43,7 @@
                     <div class="col-1">
                         <strong class="like-check">
                             {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST" id="likedata">
+                            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST" id="likedata" >
                                 {% csrf_token %}
                                 {% if liked %}
 
@@ -75,10 +75,10 @@
                 <!-- Social -->
                 <div class="social-icon p-0">
                     <a href="#" target="_blank">
-                        <img class="mr-10 mb-10" src="/static/images/facebook.png" alt="Facebook sharing link">
+                        <img class="mr-10 mb-10" src="https://res.cloudinary.com/kdcloud-8710/image/upload/v1653858220/The%20Note%20mag/facebook_doh2pq.png" alt="Facebook sharing link">
                     </a>
                     <a href="#" target="_blank">
-                        <img class="mr-10 mb-10" src="/static/images/twitter.png" alt="Twitter sharing link">
+                        <img class="mr-10 mb-10" src="https://res.cloudinary.com/kdcloud-8710/image/upload/v1653858226/The%20Note%20mag/twitter_g4rwxe.png" alt="Twitter sharing link">
                     </a>
                 </div>
             </div>

@@ -16,7 +16,7 @@ class PostList(generic.ListView):
     paginate_by = 6
 
 
-def CategoryPosts(request, cats):
+def category_posts(request, cats):
     category_posts = PostList.queryset.filter(category=cats)
     return render(
         request,
@@ -93,7 +93,6 @@ class PostDetail(View):
 
 
 class PostLike(View):
-    
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
 
@@ -108,18 +107,37 @@ class PostLike(View):
 class AddPost(CreateView):
     model = Post
     template_name = 'add_post.html'
-    fields = ('title', 'slug', 'author',  'category', 'content', 'featured_image',
-              'status')
+    fields = ('title', 'slug', 'author',  'category', 'content',
+              'featured_image', 'status')
 
 
 class EditPost(UpdateView):
     model = Post
     template_name = 'edit_post.html'
-    fields = ('title', 'slug', 'author', 'category', 'content', 'featured_image',
-              'status')
+    fields = ('title', 'slug', 'author', 'category', 'content',
+              'featured_image', 'status')
 
 
 class DeletePost(DeleteView):
     model = Post
     template_name = 'delete_post.html'
     success_url = reverse_lazy('home')
+
+
+def search(request):
+    """
+    A view that return the search page.
+    """
+    if request.method == 'POST':
+        searched = request.POST.get('searched', None)
+        results = Post.objects.filter(title__contains=searched)
+        return render(
+            request,
+            'search.html',
+            {
+                'searched': searched,
+                'results': results,
+            }
+        )
+    else:
+        return render(request, 'search.html')
