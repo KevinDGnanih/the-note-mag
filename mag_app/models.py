@@ -34,7 +34,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     category = models.CharField(max_length=200, choices=CATEGORIES,
-                                default='Music')
+                                default='music')
     author = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name='mag_posts')
     updated_on = models.DateTimeField(auto_now=True)

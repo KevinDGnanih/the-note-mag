@@ -14,6 +14,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='post',
             name='category',
-            field=models.ForeignKey(default='Music', on_delete=django.db.models.deletion.CASCADE, to='mag_app.category'),
+            field=models.CharField(default='Music', max_length=50),
         ),
     ]
