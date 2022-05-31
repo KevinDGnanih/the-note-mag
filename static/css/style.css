@@ -53,7 +53,6 @@ img {
 }
 
 .capital {
-    /*text-transform: uppercase;*/
     text-transform: capitalize;
 }
 
@@ -83,6 +82,67 @@ img {
     font-size: 18px;
 }
 
+.nav-link {
+    color: #000;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    color: #2D2362;
+}
+
+.bars {
+    display: block;
+    color: #2D2362;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid #2D2362;
+    background-color: #2D2362;
+}
+
+@media(max-width: 768px) {
+
+    .hamburger {
+        display: block;
+        color: #2D2362;
+    }
+
+    .hamburger.active .bars:nth-child(2) {
+        opacity: 100;
+    }
+    .hamburger.active .bars:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bars:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 130px;
+        gap: 0;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .nav-item {
+        margin: 16px 0;
+    }
+
+    .nav-menu.active{
+        left: 0;
+    }
+
+}
+
 /* Header Bottom */
 
 .header-bottom {
@@ -97,6 +157,7 @@ img {
     width: 100%;
     background-color: #fff;
     box-shadow: 5px 5px 15px rgb(212, 212, 212, 0.4);
+    z-index: 1;
 }
 
 .sticky + .latest-posts {
@@ -114,8 +175,22 @@ img {
     z-index: 1;
 }
 
+@media (max-width: 1024px) {
+
+
+}
+
 
 /* Latest Posts area */
+
+.bar {
+    
+    height: 3px;
+    background: #2D2362;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
 .section-tittle {
     position: relative;
@@ -136,7 +211,7 @@ img {
 .shad:hover {
     box-shadow: 5px 5px 15px rgb(235, 235, 235);
 }
-.section-tittle::before {
+/*.section-tittle::before {
     position: absolute;
     content: "";
     height: 3px;
@@ -145,7 +220,7 @@ img {
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-}
+}*/
 
 /* Post Detail */
 

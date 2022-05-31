@@ -1,6 +1,6 @@
 from django.test import SimpleTestCase
 from django.urls import reverse, resolve
-from magg_app.views import PostList, PostDetail, PostLike, about, search
+from magg_app.views import PostList, PostDetail, PostLike, search
 
 
 class TestUrls(SimpleTestCase):

@@ -24,88 +24,95 @@
 
     <!-- Header Start -->
     <header>
-        <div class="header-area">
-            <div class="main-header">
-                <div class="header-top">
-                    <div class="container-fluid">
-                        <div class="col-xl-12">
-                            <div class="row d-flex justify-content-lg-between align-items-center">
-                                <div class="col header-info-left">
-                                    <li class="d-none d-lg-block">
-                                        <form id="search-bar" name="search-form" class="d-flex" method="POST"
-                                            action="{% url 'search' %}">
-                                            {% csrf_token %}
-                                            <input class="form-box search-box f-left" type="search" placeholder="Search a post"
-                                                aria-label="Search" name="searched" 
-                                                title="Please enter minimum of 2 characters" required>
-                                            <button class="btn" type="submit"></button>
-                                        </form>
-                                    </li>
-                                </div>
-                                <div class="col header-info-mid text-center">
-                                    <!-- Logo -->
-                                    <div class="logo">
-                                        <a href="{% url 'home' %}">
-                                            <img src="https://res.cloudinary.com/kdcloud-8710/image/upload/v1653872097/The%20Note%20mag/thenotelogo_yotow0.png"
-                                                width="100" height="100" alt="">
-                                        </a>
-                                        <p>The Note</p>
+        <nav class="navbars">
+            <div class="header-area">
+                <div class="main-header">
+                    <div class="header-top">
+                        <div class="container-fluid">
+                            <div class="col-xl-12">
+                                <div class="row d-flex justify-content-lg-between align-items-center">
+                                    <div class="col header-info-left">
+                                        <li class="d-none d-lg-block">
+                                            <form id="search-bar" name="search-form" class="d-flex" method="POST"
+                                                action="{% url 'search' %}">
+                                                {% csrf_token %}
+                                                <input class="form-box search-box f-left" type="search"
+                                                    placeholder="Search a post" aria-label="Search" name="searched"
+                                                    title="Please enter minimum of 2 characters" required>
+                                                <button class="btn" type="submit"></button>
+                                            </form>
+                                        </li>
+                                    </div>
+                                    <div class="col header-info-mid text-center">
+                                        <!-- Logo -->
+                                        <div class="logo">
+                                            <a href="{% url 'home' %}">
+                                                <img src="https://res.cloudinary.com/kdcloud-8710/image/upload/v1653872097/The%20Note%20mag/thenotelogo_yotow0.png"
+                                                    width="100" height="100" alt="">
+                                            </a>
+                                            <p>The Note</p>
+                                        </div>
+                                    </div>
+                                    <div id="up-nav-link" class="col header-info-right d-flex align-items-center">
+                                        <ul class="nav-menu">
+                                            <li class="nav-menu d-inline-block bold">
+                                                <a class="nav-link" href="{% url 'home' %}">HOME</a>
+                                            </li>
+                                            {% if user.is_authenticated %}
+                                            <li class="d-inline-block bold">
+                                                <a class="nav-link" href="{% url 'account_logout' %}">LOGOUT</a>
+                                            </li>
+                                            {% if user.is_superuser %}
+                                            <li class="d-inline-block bold">
+                                                <a class="nav-link" href="{% url 'add_post' %}">ADD POST</a>
+                                            </li>
+                                            {% endif %}
+                                            {% else %}
+                                            <li class="d-inline-block bold">
+                                                <a class="nav-link" href="{% url 'account_signup' %}">SIGN UP</a>
+                                            </li>
+                                            <li class="d-inline-block bold">
+                                                <a class="nav-link" href="{% url 'account_login' %}">LOGIN</a>
+                                            </li>
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                    <div class="hamburger">
+                                        <span class="bars"></span>
+                                        <span class="bars"></span>
+                                        <span class="bars"></span>
                                     </div>
                                 </div>
-                                <div id="up-nav-link" class="col header-info-right d-flex align-items-center">
-                                    <ul>
-                                        <li class="d-inline-block bold">
-                                            <a href="{% url 'home' %}">HOME</a>
-                                        </li>
-                                        {% if user.is_authenticated %}
-                                        <li class="d-inline-block bold">
-                                            <a href="{% url 'account_logout' %}">LOGOUT</a>
-                                        </li>
-                                        {% if user.is_superuser %}
-                                        <li class="d-inline-block bold">
-                                            <a href="{% url 'add_post' %}">ADD POST</a>
-                                        </li>
-                                        {% endif %}
-                                        {% else %}
-                                        <li class="d-inline-block bold">
-                                            <a href="{% url 'account_signup' %}">SIGN UP</a>
-                                        </li>
-                                        <li class="d-inline-block bold">
-                                            <a href="{% url 'account_login' %}">LOGIN</a>
-                                        </li>
-                                        {% endif %}
-                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Header Top End -->
+                    <!-- Header Bottom Start -->
+                    <div id="bottom-nav" class="header-bottom header-sticky">
+                        <div class="container-fluid">
+                            <div class="row bottom-bar align-items-center">
+                                <div class="col-12">
+                                    <!-- Original Menu -->
+                                    <div class="main-menu text-center d-lg-block">
+                                        <nav>
+                                            <ul id="navigation">
+                                                {% for category in category_list %}
+                                                <li>
+                                                    <a class="bold capital"
+                                                        href="/category/{{ category.name }}">{{ category.name | upper }}</a>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </nav>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Header Bottom End -->
                 </div>
-                <!-- Header Top End -->
-                <!-- Header Bottom Start -->
-                <div id="bottom-nav" class="header-bottom header-sticky">
-                    <div class="container-fluid">
-                        <div class="row bottom-bar align-items-center">
-                            <div class="col-12">
-                                <!-- Original Menu -->
-                                <div class="main-menu text-center d-none d-lg-block">
-                                    <nav>
-                                        <ul id="navigation">
-                                            {% for category in category_list %}
-                                            <li>
-                                                <a class="bold capital"
-                                                    href="/category/{{ category.name }}">{{ category.name | upper }}</a>
-                                            </li>
-                                            {% endfor %}
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Header Bottom End -->
             </div>
-        </div>
+        </nav>
         <!-- Header End -->
     </header>
 
