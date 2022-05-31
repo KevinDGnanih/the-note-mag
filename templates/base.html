@@ -32,23 +32,27 @@
                             <div class="col-xl-12">
                                 <div class="row d-flex justify-content-lg-between align-items-center">
                                     <div class="col header-info-left">
-                                        <li class="d-none d-lg-block">
-                                            <form id="search-bar" name="search-form" class="d-flex" method="POST"
-                                                action="{% url 'search' %}">
-                                                {% csrf_token %}
-                                                <input class="form-box search-box f-left" type="search"
-                                                    placeholder="Search a post" aria-label="Search" name="searched"
-                                                    title="Please enter minimum of 1 characters" required>
-                                                <button class="btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                                            </form>
-                                        </li>
+                                        <ul>
+                                            <li class="d-none d-lg-block">
+                                                <form id="search-bar" name="search-form" class="d-flex" method="POST"
+                                                    action="{% url 'search' %}">
+                                                    {% csrf_token %}
+                                                    <input class="form-box search-box f-left" type="search"
+                                                        placeholder="Search a post" aria-label="Search" name="searched"
+                                                        title="Please enter minimum of 1 characters" required>
+                                                    <button class="btn-search" type="submit"
+                                                        aria-label="Search button"><i
+                                                            class="fa-solid fa-magnifying-glass"></i></button>
+                                                </form>
+                                            </li>
+                                        </ul>
                                     </div>
                                     <div class="col header-info-mid text-center">
                                         <!-- Logo -->
                                         <div class="logo">
                                             <a href="{% url 'home' %}">
                                                 <img src="https://res.cloudinary.com/kdcloud-8710/image/upload/v1653872097/The%20Note%20mag/thenotelogo_yotow0.png"
-                                                    width="100" height="100" alt="">
+                                                    width="100" height="100" alt="The Note Logo magazine">
                                             </a>
                                             <p>The Note</p>
                                         </div>
