@@ -93,6 +93,10 @@ img {
     color: #000;
 }
 
+.nav-link:hover {
+    color: #2D2362;
+}
+
 .hamburger {
     display: none;
     cursor: pointer;
