@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from django.http import JsonResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from .models import Post, Category
 from .forms import CommentForm
 

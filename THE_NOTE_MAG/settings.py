@@ -9,9 +9,8 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
-import os
 from pathlib import Path
+import os
 import dj_database_url
 from django.contrib.messages import constants as messages
 if os.path.isfile('env.py'):
@@ -30,6 +29,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['the-note-mag-v2.herokuapp.com', 'localhost']
 
@@ -105,7 +106,7 @@ WSGI_APPLICATION = 'THE_NOTE_MAG.wsgi.application'
 
 # dbsqlite3 database was used for testing purposes only when DEVELOPMENT=True
 # If statement allows for switching between databases when testing
-DEVELOPMENT = False
+DEVELOPMENT = True
 
 if DEVELOPMENT:
     DATABASES = {
