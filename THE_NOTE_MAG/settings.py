@@ -31,8 +31,12 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+DEVELOPMENT = False
 
-ALLOWED_HOSTS = ['the-note-mag-v2.herokuapp.com', 'localhost']
+if DEVELOPMENT:
+    ALLOWED_HOSTS = ['localhost']
+else:
+    ALLOWED_HOSTS = ['the-note-mag-v2.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -106,7 +110,7 @@ WSGI_APPLICATION = 'THE_NOTE_MAG.wsgi.application'
 
 # dbsqlite3 database was used for testing purposes only when DEVELOPMENT=True
 # If statement allows for switching between databases when testing
-DEVELOPMENT = True
+
 
 if DEVELOPMENT:
     DATABASES = {
