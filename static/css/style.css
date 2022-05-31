@@ -62,6 +62,13 @@ img {
     width: 50%;
 }
 
+.btn-search {
+    border: none;
+    background-color: rgb(235, 235, 235, 0);
+    margin-bottom: 20px;
+    margin-left: -28px;
+}
+
 .header-area .header-top {
     padding: 29px 80px;
 }
