@@ -1,4 +1,8 @@
-
+setTimeout(function () {
+  let messages = document.getElementById('msg');
+  let alert = new bootstrap.Alert(messages);
+  alert.close();
+}, 3000);
 
 window.onscroll = function() {myFunction()};
 
@@ -11,7 +15,7 @@ var sticky = navbar.offsetTop;
 // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function myFunction() {
   if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
+    navbar.classList.add("sticky");
   } else {
     navbar.classList.remove("sticky");
   }
@@ -23,9 +27,9 @@ const navMenu = document.querySelector(".nav-menu");
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   navMenu.classList.toggle("active");
-})
+});
 
 document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-  hamburger.classList.remove("active")
-  navMenu.classList.remove("active")
-}))
+  hamburger.classList.remove("active");
+  navMenu.classList.remove("active");
+}));

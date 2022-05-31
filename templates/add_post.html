@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <h1 class="text-center">Add a new post</h1>
 
-        <form method="POST" action="">
+        <form method="POST">
             {% csrf_token %}
             {{form.as_p}}
             <button class="submit-btn-logout">Post</button>
