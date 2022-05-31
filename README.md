@@ -573,4 +573,19 @@ Please note as of 18/04/2022, Heroku no longer allows deployment from GitHub and
 * Run the command heroku login -i and login when prompted. Then run the following command: heroku git:remote -a your_app_name_here and replace your_app_name_here with the name of your Heroku app. This will link the app to your Gitpod terminal.
 * After linking your app to your workspace, you can then deploy new versions of the app by running the command git push heroku main and your app will be deployed to Heroku.
 
+## Credits <a name="credits"></a>
 
+### Code
+
+* To build the search functionality for the website, code from the following [YouTube](https://www.youtube.com/watch?v=AGtae4L5BbI) video tutorial was used to assist with this.
+
+* A large part of this project code was used and inspired from the Code Institute's I Think Therefore I Blog walkthrough to be able to build a base skeleton project. Please note some of the borrowed code has been customised by me to fit this project. I have also added my own code for additional functions for the project.
+
+* [Bootstrap](https://getbootstrap.com/) to help with styling and overall responsivness of the website.
+
+* To assist with the unit testing section of the project, Code Institute's Hello Django Testing tutorial section was utilised as well as the following [YouTube](https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM&index=1) resource.
+
+## Acknowledgements <a name="acknowledgements"></a>
+
+* I would like to thank my family and friends for their support throughout this project and for assisting with the testing stage and providing valuable feedback.
+* My mentor, Guido Cecilio, for being of great support and providing valuable guidance and feedback throughout this process.
